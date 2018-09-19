@@ -1,0 +1,146 @@
+/*
+	Author: Vijay Thapa;
+	Theme: Clean Portfolio;
+	Version: 1.0;
+*/
+*{
+	margin: 0 0;
+	padding: 0 0;
+}
+
+body{
+	font-family: helvetica;
+	background-image: url('../../images/BG.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.clearfix{
+	float: none;
+	clear: both;
+}
+.navbar{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 2%;
+	padding: 1%;
+	text-align: right;;
+}
+.navbar ul{
+	list-style-type: none;
+}
+.navbar ul a{
+	color: grey;
+	text-decoration: none;
+	border: 1px solid grey;
+	padding: 1%;
+	transition: 0.4s all ease;
+}
+.navbar ul a:hover{
+	color: grey;
+	background-color: #FFEB3B;
+	border: 1px solid grey;
+	transition: 0.4s all ease;
+}
+.navbar ul a li{
+	display: inline;
+}
+
+.main{
+	width: 50%;
+	margin: 0 auto; 
+	margin-top: 5%;
+	padding: 5%;
+	background-color: #FFEB3B;
+	text-align: center;
+	box-shadow: 0 0 10px 1px grey;
+}
+.main .main-left
+{
+	width: 35%;
+	float: left;;
+}
+.main .main-right
+{
+	order: 1px solid red;
+	width: 60%;
+	float: right;
+	padding-top: 15%;
+}
+.title{
+	font-size: 150%;
+	font-weight: bold;
+}
+.main .main-right a{
+	text-decoration: none;;
+}
+.main .main-right ul{
+	list-style-type: none;
+	margin: 25px 0 25px 0;
+}
+.main .main-right ul a{
+	color: grey;
+	padding: 1%;
+	font-size: 140%
+}
+.main .main-right ul a:hover{
+	color: black;
+	transition: 0.4s all ease;
+}
+.main .main-right ul a li{
+	display: inline;
+}
+.btn-info{
+	transition: 0.4s all ease;
+	background-color: #673AB7;
+	color: white;
+	width: 70%;
+	padding: 3%;
+	margin: 0 auto;
+	opacity: 0.9;
+}
+.btn-info:hover{
+	transition: 0.4s all ease;
+	opacity: 1;
+}
+
+@media only screen and (max-width: 1024px){
+	.main{
+		width: 85%;
+	}
+}
+/*
+	CSS for Tablet View
+*/
+@media only screen and (max-width: 768px){
+	.navbar{
+		text-align: center;
+		margin-top: 5%;
+	}
+	.main{
+		width: 80%;
+		margin-top: 5%;
+	}
+	.main .main-left{
+		width: 100%;
+	}
+	.main .main-right{
+		width: 100%;
+	}
+	.title{
+		font-size: 130%;
+	}
+	.btn-info{
+		width: 80%;
+	}
+}
+
+/*
+	CSS for Mobile View
+*/
+@media only screen and (max-width: 480px){
+	body{
+	font-family: helvetica;
+	background-color: !important white;
+}
+}
