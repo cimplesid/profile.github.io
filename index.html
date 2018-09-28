@@ -1,65 +1,234 @@
 
+
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Sidtube oficial || </title>
-	<meta name="author" content="Siddhartha joshi">
-	<meta name="description" content="Vijay Thapa, Creative Online Solution Provider, Web Developer and Graphic Designer">
-	<meta name="keywords" content="Web Developer, web designer, website design, php, programmer, software developer, online solution provider,freelancer, Creative developer and designer">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="robots" content="all,index,follow" />
+<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+<br>	
+<title>|||SID TUBE OFFICIAL|||||</title>
+<link rel="shortcut icon" href="#">
+<script type="text/javascript">var rev="fwd";function titlebar(val)
+{var msg="sid";var res=" ";var speed=100;var pos=val;msg="|||SID TUBE OFFICIAL|||||"
+var le=msg.length;if(rev=="fwd"){if(pos<le){pos=pos+1;scroll=msg.substr(0,pos);document.title=scroll;timer=window.setTimeout("titlebar("+pos+")",speed);}
+else{rev="bwd";timer=window.setTimeout("titlebar("+pos+")",speed);}}
+else{if(pos>0){pos=pos-1;var ale=le-pos;scrol=msg.substr(ale,le);document.title=scrol;timer=window.setTimeout("titlebar("+pos+")",speed);}
+else{rev="fwd";timer=window.setTimeout("titlebar("+pos+")",speed);}}}
+titlebar(0);</script><script type="text/javascript">
+var colour="#FF0000";
+var sparkles=250;
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+window.onload=function() { if (document.getElementById) {
+  var i, rats, rlef, rdow;
+  for (var i=0; i<sparkles; i++) {
+    var rats=createDiv(3, 3);
+    rats.style.visibility="hidden";
+    document.body.appendChild(tiny[i]=rats);
+    starv[i]=0;
+    tinyv[i]=0;
+    var rats=createDiv(5, 5);
+    rats.style.backgroundColor="transparent";
+    rats.style.visibility="hidden";
+    var rlef=createDiv(1, 5);
+    var rdow=createDiv(5, 1);
+    rats.appendChild(rlef);
+    rats.appendChild(rdow);
+    rlef.style.top="2px";
+    rlef.style.left="0px";
+    rdow.style.top="0px";
+    rdow.style.left="2px";
+    document.body.appendChild(star[i]=rats);
+  }
+  set_width();
+  sparkle();
+}}
 
-	<!--Fav Icon Starts-->
-	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-	<link rel="manifest" href="favicons/manifest.json">
-	<meta name="theme-color" content="#f6eb14">
-	<!--Fav ICON Ends-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+function sparkle() {
+  var c;
+  if (x!=ox || y!=oy) {
+    ox=x;
+    oy=y;
+    for (c=0; c<sparkles; c++) if (!starv[c]) {
+      star[c].style.left=(starx[c]=x)+"px";
+      star[c].style.top=(stary[c]=y)+"px";
+      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+      star[c].style.visibility="visible";
+      starv[c]=50;
+      break;
+    }
+  }
+  for (c=0; c<sparkles; c++) {
+    if (starv[c]) update_star(c);
+    if (tinyv[c]) update_tiny(c);
+  }
+  setTimeout("sparkle()", 40);
+}
+
+function update_star(i) {
+  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+  if (starv[i]) {
+    stary[i]+=1+Math.random()*3;
+    if (stary[i]<shigh+sdown) {
+      star[i].style.top=stary[i]+"px";
+      starx[i]+=(i%5-2)/5;
+      star[i].style.left=starx[i]+"px";
+    }
+    else {
+      star[i].style.visibility="hidden";
+      starv[i]=0;
+      return;
+    }
+  }
+  else {
+    tinyv[i]=50;
+    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+    tiny[i].style.width="2px";
+    tiny[i].style.height="2px";
+    star[i].style.visibility="hidden";
+    tiny[i].style.visibility="visible"
+  }
+}
+
+function update_tiny(i) {
+  if (--tinyv[i]==25) {
+    tiny[i].style.width="1px";
+    tiny[i].style.height="1px";
+  }
+  if (tinyv[i]) {
+    tinyy[i]+=1+Math.random()*3;
+    if (tinyy[i]<shigh+sdown) {
+      tiny[i].style.top=tinyy[i]+"px";
+      tinyx[i]+=(i%5-2)/5;
+      tiny[i].style.left=tinyx[i]+"px";
+    }
+    else {
+      tiny[i].style.visibility="hidden";
+      tinyv[i]=0;
+      return;
+    }
+  }
+  else tiny[i].style.visibility="hidden";
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  set_scroll();
+  y=(e)?e.pageY:event.y+sdown;
+  x=(e)?e.pageX:event.x+sleft;
+}
+
+function set_scroll() {
+  if (typeof(self.pageYOffset)=="number") {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body.scrollTop || document.body.scrollLeft) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+	sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+window.onresize=set_width;
+function set_width() {
+  if (typeof(self.innerWidth)=="number") {
+    swide=self.innerWidth;
+    shigh=self.innerHeight;
+  }
+  else if (document.documentElement && document.documentElement.clientWidth) {
+    swide=document.documentElement.clientWidth;
+    shigh=document.documentElement.clientHeight;
+  }
+  else if (document.body.clientWidth) {
+    swide=document.body.clientWidth;
+    shigh=document.body.clientHeight;
+  }
+}
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height+"px";
+  div.style.width=width+"px";
+  div.style.overflow="hidden";
+  div.style.backgroundColor=colour;
+  return (div);} </script> <script language="JavaScript"> var message="Do not copy or edit this file. "; function clickIE4(){ if (event.button==2){ alert(message); return false; } } function clickNS4(e){ if (document.layers||document.getElementById&&!document.all){ if (e.which==2||e.which==3){ alert(message); return false; } } } if (document.layers){ document.captureEvents(Event.MOUSEDOWN); document.onmousedown=clickNS4; } else if (document.all&&!document.getElementById){ document.onmousedown=clickIE4; } document.oncontextmenu=new Function("alert(message);return false") </script>
+  </script>
+
+  <script type="text/JavaScript">
+
+function disableselect(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+
+<style>
+body{background: url('logo.png') no-repeat center center fixed black;}
+h1{color:#66CC33; font-size:50px;}
+p1{color:#DF013A; font-size:45px}
+p2{color:skyblue; font-size:40px;}
+p3{color:red; font-size:35px;}
+p4{color:#3ADF00; font-size:35px;}
+p5{color:#0B6138;font-size:30px;}
+p6{color:red; font-size:35px;}
+/*ul
+{
+list-style-type: none;
+    margin: 25px 0 25px 0;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}*/
+
+</style>
 </head>
-<body>
-	<div class="wrappper">
-		<nav class="navbar">
-			<ul>
-				<a href="https://www.youtube.com/sidtube?sub_confirmation=1" target="_blank"><li>YOUTUBE</li></a>
-				<a href="#" target="_blank"><li>TECH BLOGS</li></a>
-				<a href="#" target="_blank"><li>TRAVEL BLOGS</li></a>
+<body><center>
+<h1>WELCOME TO OFFICIAL PAGE OF SIDTUBE</h1>
+<!-- <img src="logo.png"/> --><img src="sidtube.gif"  /> <br>
+<p1>***Learn a computer humanly#***</p1><br>
+<p2>This is the official Website of sidtube.</p2></br>
+<p3>Site is not completed yet this just a prototype</p3><br>
+<p4>Suscribe to channel if you have not already <a href="https://www.youtube.com/sidtube?sub_confirmation=1" target="_blank">click here to suscribe</a></p4><br>
+
+					<a href="https://www.facebook.com/cimple.sid/" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+					<a href="https://twitter.com/joshisid12" target="_blank"><i class="fab fa-twitter-square fa-lg"></i></a>
+					<a href="https://github.com/cimplesid" target="_blank"><i class="fab fa-github-square fa-lg"></i></a>
+					<a href="https://www.instagram.com/cimplesid/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+					<a href="https://www.linkedin.com/in/sid-joshi-46631310b/" target="_blank"><i class="fab fa-linkedin-square fa-lg"></i></a>
+					<a href="https://www.pinterest.com/joshisid178/" target="_blank"><i class="fab fa-pinterest-square fa-lg"></i></a>
+					<a href="https://plus.google.com/117772544485008821909" target="_blank"><i class="fab fa-google-plus-square fa-lg"></i></a>
 				
-			</ul>
-		</nav>
 
-		<div class="main">
-			<div class="main-left">
-				<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="sidtube"><a class="LI-simple-link" href='https://np.linkedin.com/in/sid-joshi-46631310b?trk=profile-badge'>Sid joshi</a></div>
-			</div>
-
-			<div class="main-right">
-				
-				<div class="title">"BRANDING MATTERS"</div>
-
-				<ul>
-					<a href="https://www.facebook.com/cimple.sid/" target="_blank"><li><i class="fa fa-facebook-square fa-lg"></i></li></a>
-					<a href="https://twitter.com/joshisid12" target="_blank"><li><i class="fa fa-twitter-square fa-lg"></i></li></a>
-					<a href="https://github.com/cimplesid" target="_blank"><li><i class="fa fa-github-square fa-lg"></i></li></a>
-					<a href="https://www.instagram.com/cimplesid/" target="_blank"><li><i class="fa fa-instagram fa-lg"></i></li></a>
-					<a href="https://www.linkedin.com/in/sid-joshi-46631310b/" target="_blank"><li><i class="fa fa-linkedin-square fa-lg"></i></li></a>
-					<a href="https://www.pinterest.com/joshisid178/" target="_blank"><li><i class="fa fa-pinterest-square fa-lg"></i></li></a>
-					<a href="https://plus.google.com/117772544485008821909" target="_blank"><li><i class="fa fa-google-plus-square fa-lg"></i></li></a>
-				</ul>
-
-				<!--<a href="vijay-thapa-business-proposal.pdf" target="_blank"><p class="btn-info">"LET'S GROW BUSINESS TOGETHER"</p></a>-->
-				
-				<a href="mailto:cimple111@gmail.com?subject=Business%20with%20sid" target="_blank"><p class="btn-info">"LET'S GROW BUSINESS TOGETHER"</p></a>
-			</div>
-			
-			<div class="clearfix"></div>
-			
-		</div>
-	</div>
-	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<iframe width="0" height="0" src="https://www.youtube.com/embed/6tJBO-rN0Kc?rel=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
+<a href="https://www.facebook.com/cimple.sid"></a> </br></center>
 </body>
 </html>
